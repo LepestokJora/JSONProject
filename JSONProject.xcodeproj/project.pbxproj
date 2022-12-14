@@ -13,6 +13,7 @@
 		ED2E444129490CDE00D34CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2E443F29490CDE00D34CEE /* Main.storyboard */; };
 		ED2E444329490CDF00D34CEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2E444229490CDF00D34CEE /* Assets.xcassets */; };
 		ED2E444629490CDF00D34CEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2E444429490CDF00D34CEE /* LaunchScreen.storyboard */; };
+		ED2E444E294A565500D34CEE /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E444D294A565500D34CEE /* JsonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ED2E444229490CDF00D34CEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED2E444529490CDF00D34CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED2E444729490CDF00D34CEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED2E444D294A565500D34CEE /* JsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				ED2E443929490CDE00D34CEE /* AppDelegate.swift */,
 				ED2E443B29490CDE00D34CEE /* SceneDelegate.swift */,
 				ED2E443D29490CDE00D34CEE /* ViewController.swift */,
+				ED2E444D294A565500D34CEE /* JsonModel.swift */,
 				ED2E443F29490CDE00D34CEE /* Main.storyboard */,
 				ED2E444229490CDF00D34CEE /* Assets.xcassets */,
 				ED2E444429490CDF00D34CEE /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED2E443E29490CDE00D34CEE /* ViewController.swift in Sources */,
+				ED2E444E294A565500D34CEE /* JsonModel.swift in Sources */,
 				ED2E443A29490CDE00D34CEE /* AppDelegate.swift in Sources */,
 				ED2E443C29490CDE00D34CEE /* SceneDelegate.swift in Sources */,
 			);

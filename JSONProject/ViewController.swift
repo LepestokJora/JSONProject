@@ -38,12 +38,13 @@ class ViewController: UIViewController {
         guard let url = URL(string: urlJson) else { return }
       
         URLSession.shared.dataTask(with: url) { data, response, error in
-            //
+            //если есть у меня данные и ответ а иначе вывожу ошибку и выхлжу
             guard let data, let response else {
                 print(error?.localizedDescription ?? "No error discription")
                 return
             }
-            
+            // есть ответ в дате значить парссим
+            let jsonData = try JSONDecoder().decode(ResponseData.self, from: data)
             print(response)
         }
         
