@@ -17,3 +17,4 @@ struct ResponseData: Codable {
     let date: String?
     let copyright: String?
 }
+
