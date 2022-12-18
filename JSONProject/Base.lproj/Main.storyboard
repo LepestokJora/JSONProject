@@ -50,7 +50,7 @@
                     <connections>
                         <outlet property="jsonLabel" destination="WRh-fR-CEa" id="HGU-Lj-EBp"/>
                         <outlet property="startButton" destination="3m5-4Y-kPT" id="zsR-fg-We1"/>
-                        <outlet property="weitActIndView" destination="Yv2-m5-x12" id="MgA-qo-Ple"/>
+                        <outlet property="weitActivityIndicator" destination="Yv2-m5-x12" id="MgA-qo-Ple"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

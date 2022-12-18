@@ -10,9 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var jsonLabel: UILabel!
-    @IBOutlet weak var weitActIndView: UIActivityIndicatorView!
+    @IBOutlet weak var weitActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var startButton: UIButton!
-    
+   
     enum StatusBrn {
         case start, clean
     }
@@ -23,9 +23,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weitActIndView.isHidden = true
-        weitActIndView.startAnimating()
+        weitActivityIndicator.isHidden = true
+        weitActivityIndicator.startAnimating()
     }
+
     @IBAction func startAction() {
         switch statusBtn {
         case .start:
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
             startButton.setTitle("Start", for: .normal)
         }
 
+        weitActivityIndicator.isHidden = false
+        startButton.isUserInteractionEnabled = false
     }
     
     
@@ -44,11 +47,9 @@ class ViewController: UIViewController {
     //3. Написать функцию запроса данных с сервера
     private func startJson() {
         guard let url = URL(string: urlJson) else { return }
-        weitActIndView.isHidden = false
-        startButton.isUserInteractionEnabled = false
         URLSession.shared.dataTask(with: url) { data, _, error in
             //если есть у меня данные и ответ а иначе вывожу ошибку и выхлжу
-            guard error == nil, let data = data else {
+            guard let data = data else {
                 print("No data received:", error ?? URLError(.badServerResponse))
                 self.startButton.isUserInteractionEnabled = true
                 return
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
         }
         
         self.jsonLabel.text = resultStr
-        weitActIndView.isHidden = true
+        weitActivityIndicator.isHidden = true
         startButton.setTitle("Clean", for: .normal)
         statusBtn = .clean
         DispatchQueue.main.asyncAfter(wallDeadline: .now() + 1, execute: {
