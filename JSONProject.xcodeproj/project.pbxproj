@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED2A88DB29532C0F00934C43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ED2A88DA29532C0F00934C43 /* Alamofire */; };
 		ED2A88DE29532F7F00934C43 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = ED2A88DD29532F7F00934C43 /* SwiftyJSON */; };
+		ED2A88E229534FDE00934C43 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A88E129534FDE00934C43 /* NetworkManager.swift */; };
 		ED2E443A29490CDE00D34CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E443929490CDE00D34CEE /* AppDelegate.swift */; };
 		ED2E443C29490CDE00D34CEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E443B29490CDE00D34CEE /* SceneDelegate.swift */; };
 		ED2E443E29490CDE00D34CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E443D29490CDE00D34CEE /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED2A88E129534FDE00934C43 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ED2E443629490CDE00D34CEE /* JSONProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSONProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2E443929490CDE00D34CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2E443B29490CDE00D34CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2A88E3295397D800934C43 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED2A88E129534FDE00934C43 /* NetworkManager.swift */,
+				ED2A88E729539B9300934C43 /* Storyboards */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED2A88E429539AB900934C43 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E444D294A565500D34CEE /* JsonModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED2A88E529539B2800934C43 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E443929490CDE00D34CEE /* AppDelegate.swift */,
+				ED2E443B29490CDE00D34CEE /* SceneDelegate.swift */,
+				ED2E444729490CDF00D34CEE /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		ED2A88E629539B5B00934C43 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E443D29490CDE00D34CEE /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		ED2A88E729539B9300934C43 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E443F29490CDE00D34CEE /* Main.storyboard */,
+				ED2E444429490CDF00D34CEE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ED2A88E829539BC300934C43 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ED2E444229490CDF00D34CEE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		ED2E442D29490CDE00D34CEE = {
 			isa = PBXGroup;
 			children = (
@@ -62,14 +116,11 @@
 		ED2E443829490CDE00D34CEE /* JSONProject */ = {
 			isa = PBXGroup;
 			children = (
-				ED2E443929490CDE00D34CEE /* AppDelegate.swift */,
-				ED2E443B29490CDE00D34CEE /* SceneDelegate.swift */,
-				ED2E443D29490CDE00D34CEE /* ViewController.swift */,
-				ED2E444D294A565500D34CEE /* JsonModel.swift */,
-				ED2E443F29490CDE00D34CEE /* Main.storyboard */,
-				ED2E444229490CDF00D34CEE /* Assets.xcassets */,
-				ED2E444429490CDF00D34CEE /* LaunchScreen.storyboard */,
-				ED2E444729490CDF00D34CEE /* Info.plist */,
+				ED2A88E429539AB900934C43 /* Models */,
+				ED2A88E629539B5B00934C43 /* ViewController */,
+				ED2A88E529539B2800934C43 /* App */,
+				ED2A88E3295397D800934C43 /* Services */,
+				ED2A88E829539BC300934C43 /* Resources */,
 			);
 			path = JSONProject;
 			sourceTree = "<group>";
@@ -155,6 +206,7 @@
 			files = (
 				ED2E443E29490CDE00D34CEE /* ViewController.swift in Sources */,
 				ED2E444E294A565500D34CEE /* JsonModel.swift in Sources */,
+				ED2A88E229534FDE00934C43 /* NetworkManager.swift in Sources */,
 				ED2E443A29490CDE00D34CEE /* AppDelegate.swift in Sources */,
 				ED2E443C29490CDE00D34CEE /* SceneDelegate.swift in Sources */,
 			);
