@@ -16,39 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press start button" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRh-fR-CEa">
-                                <rect key="frame" x="54" y="67" width="286" height="20.333333333333329"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m5-4Y-kPT">
-                                <rect key="frame" x="106" y="127.33333333333333" width="173" height="34.333333333333329"/>
+                                <rect key="frame" x="100" y="736" width="190" height="34.333333333333371"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
                                 <connections>
                                     <action selector="startAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnP-Ti-4zr"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Yv2-m5-x12">
-                                <rect key="frame" x="185" y="418.66666666666669" width="20" height="20"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Press start button" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-PJ-jtt">
+                                <rect key="frame" x="20" y="89" width="350" height="581"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Yv2-m5-x12">
+                                <rect key="frame" x="185" y="418" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                         <constraints>
-                            <constraint firstItem="3m5-4Y-kPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="8nd-xq-G1F"/>
-                            <constraint firstItem="Yv2-m5-x12" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="AqL-Rx-K3t"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3m5-4Y-kPT" secondAttribute="trailing" constant="111" id="PQk-7k-hdd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WRh-fR-CEa" secondAttribute="trailing" constant="50" id="ad5-3h-FQR"/>
-                            <constraint firstItem="WRh-fR-CEa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="54" id="e31-up-097"/>
-                            <constraint firstItem="3m5-4Y-kPT" firstAttribute="top" secondItem="WRh-fR-CEa" secondAttribute="bottom" constant="40" id="qb5-mH-77L"/>
-                            <constraint firstItem="WRh-fR-CEa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="w2n-W0-AoH"/>
-                            <constraint firstItem="Yv2-m5-x12" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zR0-v9-n9E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="daZ-PJ-jtt" secondAttribute="bottom" constant="140" id="7zJ-n3-Myx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3m5-4Y-kPT" secondAttribute="trailing" constant="100" id="GvN-zk-WNw"/>
+                            <constraint firstItem="daZ-PJ-jtt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="VS8-MV-Lpi"/>
+                            <constraint firstItem="3m5-4Y-kPT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="bWd-pC-vJZ"/>
+                            <constraint firstItem="daZ-PJ-jtt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eKu-hW-7QD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3m5-4Y-kPT" secondAttribute="bottom" constant="39.670000000000002" id="oYW-TR-Vap"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="daZ-PJ-jtt" secondAttribute="trailing" constant="20" id="xOz-z9-2Nd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="jsonLabel" destination="WRh-fR-CEa" id="HGU-Lj-EBp"/>
+                        <outlet property="jsonTV" destination="daZ-PJ-jtt" id="Txb-gu-Td1"/>
                         <outlet property="startButton" destination="3m5-4Y-kPT" id="zsR-fg-We1"/>
                         <outlet property="weitActivityIndicator" destination="Yv2-m5-x12" id="MgA-qo-Ple"/>
                     </connections>
@@ -59,11 +59,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

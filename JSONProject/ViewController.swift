@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var jsonLabel: UILabel!
+    @IBOutlet weak var jsonTV: UITextView!
     @IBOutlet weak var weitActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var startButton: UIButton!
    
@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         weitActivityIndicator.isHidden = true
         weitActivityIndicator.startAnimating()
+        
     }
 
     @IBAction func startAction() {
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
         case .start:
             startJson()
         case .clean:
-            self.jsonLabel.text = "Press start button"
+            self.jsonTV.text = "Press start button"
             statusBtn = .start
             startButton.setTitle("Start", for: .normal)
         }
@@ -66,8 +67,29 @@ class ViewController: UIViewController {
                 return
             }
             var json = try! JSON(data: data)
-            print(json)
-
+            
+            let url = json["url"].stringValue
+            let title = json["title"].stringValue
+            let service_version = json["service_version"].stringValue
+            let media_type = json["media_type"].stringValue
+            let hdurl = json["hdurl"].stringValue
+            let explanation = json["explanation"].stringValue
+            let date = json["date"].stringValue
+            let copyright = json["copyright"].stringValue
+            
+            print("\(url), \(title), \(service_version), \(media_type), \(hdurl), \(explanation), \(date), \(copyright)")
+            
+            let jsonModel: ResponseData = ResponseData(url: url,
+                                                       title: title,
+                                                       service_version: service_version,
+                                                       media_type: media_type,
+                                                       hdurl: hdurl,
+                                                       explanation: explanation,
+                                                       date: date,
+                                                       copyright: copyright)
+            
+            self.showResult(jsonModel)
+            
         }
 //        guard let url = URL(string: urlJson) else { return }
 //        URLSession.shared.dataTask(with: url) { data, _, error in
@@ -128,7 +150,7 @@ class ViewController: UIViewController {
             resultStr.append("copyright: \(copyright)\n\n")
         }
         
-        self.jsonLabel.text = resultStr
+        self.jsonTV.text = resultStr
         weitActivityIndicator.isHidden = true
         startButton.setTitle("Clean", for: .normal)
         statusBtn = .clean
@@ -136,6 +158,5 @@ class ViewController: UIViewController {
             self.startButton.isUserInteractionEnabled = true
         })
     }
-    
 }
 
