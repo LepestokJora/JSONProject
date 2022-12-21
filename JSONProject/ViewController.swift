@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
     
@@ -46,31 +48,55 @@ class ViewController: UIViewController {
     
     //3. Написать функцию запроса данных с сервера
     private func startJson() {
-        guard let url = URL(string: urlJson) else { return }
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            //если есть у меня данные и ответ а иначе вывожу ошибку и выхлжу
-            guard let data = data else {
-                print("No data received:", error ?? URLError(.badServerResponse))
+        AF.request(urlJson).responseJSON { response in
+            print(response)
+            //to get status code
+            if let status = response.response?.statusCode {
+                switch(status){
+                case 201:
+                    print("example success")
+                default:
+                    print("error with response status: \(status)")
+                }
+            }
+            //to get JSON return value
+            guard let data = response.data else {
+                print("No data received:", response.error ?? URLError(.badServerResponse))
                 self.startButton.isUserInteractionEnabled = true
                 return
             }
-            // есть ответ в дате значить парссим
-            let decoder = JSONDecoder()
-            //5. Распарсить JSON,
-            do {
-                let jsonData = try decoder.decode(ResponseData.self, from: data)
-                //6. Отобразить данные на консоли.(вызвать фукцию принт из своей модели)
-                DispatchQueue.main.async {
-                    self.showResult(jsonData)
-                }
-            }
-            catch let parseError {
-                self.startButton.isUserInteractionEnabled = true
-                print("Parsing error:", parseError, String(describing: String(data: data, encoding: .utf8)))
-            }
-            
-        }.resume()
-        
+            var json = try! JSON(data: data)
+            print(json)
+
+        }
+//        guard let url = URL(string: urlJson) else { return }
+//        URLSession.shared.dataTask(with: url) { data, _, error in
+//            //если есть у меня данные и ответ а иначе вывожу ошибку и выхлжу
+//            guard let data = data else {
+//                print("No data received:", error ?? URLError(.badServerResponse))
+//                self.startButton.isUserInteractionEnabled = true
+//                return
+//            }
+////            // есть ответ в дате значить парссим
+////            let decoder = JSONDecoder()
+////            //5. Распарсить JSON,
+////            do {
+////                let jsonData = try decoder.decode(ResponseData.self, from: data)
+////                //6. Отобразить данные на консоли.(вызвать фукцию принт из своей модели)
+////                DispatchQueue.main.async {
+////                    self.showResult(jsonData)
+////                }
+////            }
+////            catch let parseError {
+////                self.startButton.isUserInteractionEnabled = true
+////                print("Parsing error:", parseError, String(describing: String(data: data, encoding: .utf8)))
+////            }
+//         //   let jsonData = JSON.data(using: .utf8)!
+//
+//
+//
+//        }.resume()
+//
         
     }
     
